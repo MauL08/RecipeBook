@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ThemeControl extends StatelessWidget {
+class SlideHomePreview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
