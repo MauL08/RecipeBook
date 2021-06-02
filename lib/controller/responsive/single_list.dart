@@ -6,6 +6,8 @@ class SingleListMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
         itemCount: HomeDataList.length,
         itemBuilder: (context, index) {
           HomeData menu = HomeDataList[index];

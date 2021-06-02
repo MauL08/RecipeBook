@@ -9,14 +9,20 @@ class HomeListMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (builder, constraint) {
-        if (constraint.maxWidth < 1000) {
+        if (constraint.maxWidth < 800) {
           return SingleListMenu();
-        } else if (constraint.maxWidth < 1400) {
-          return GridListOne();
-        } else if (constraint.maxWidth < 1800) {
-          return GridListTwo();
+        } else if (constraint.maxWidth < 1600) {
+          return Container(
+            child: Text("Width Max 1600"),
+          );
+        } else if (constraint.maxWidth < 2400) {
+          return Container(
+            child: Text("Width Max 2400"),
+          );
         } else {
-          return GridListThree();
+          return Container(
+            child: Text("Width Max > 2400"),
+          );
         }
       },
     );
