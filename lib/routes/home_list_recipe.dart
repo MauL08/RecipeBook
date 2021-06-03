@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../models/food.dart';
+import '../models/list.dart';
 
-class RecipePage extends StatelessWidget {
-  final FoodData data;
+class HomeListRecipePage extends StatelessWidget {
+  final HomeData data;
 
-  RecipePage({required this.data});
+  HomeListRecipePage({required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +15,9 @@ class RecipePage extends StatelessWidget {
           data.name,
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
+      ),
+      body: Center(
+        child: Text(data.name),
       ),
     );
   }
