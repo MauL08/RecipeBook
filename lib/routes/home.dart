@@ -8,10 +8,11 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.lightGreen,
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Buku Resep Masakan Indonesia",
+          "Buku Resep Nusantara",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
