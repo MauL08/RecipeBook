@@ -12,7 +12,7 @@ class RecipePage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          data.name,
+          "test",
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
