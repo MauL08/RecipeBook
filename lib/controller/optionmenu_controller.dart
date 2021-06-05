@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:recipe_book/routes/drinks.dart';
-import 'package:recipe_book/routes/favorite.dart';
-import 'package:recipe_book/routes/food.dart';
+import 'package:recipe_book/routes/pages/drinks_page.dart';
+import 'package:recipe_book/routes/pages/fav_page.dart';
+import 'package:recipe_book/routes/pages/food_page.dart';
 
 class MenuController extends StatelessWidget {
   @override

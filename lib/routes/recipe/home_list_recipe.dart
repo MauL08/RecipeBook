@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/list.dart';
+import '../../models/list.dart';
 
 class HomeListRecipePage extends StatelessWidget {
   final HomeData data;
@@ -114,7 +114,7 @@ class HomeListRecipePage extends StatelessWidget {
                           child: FittedBox(
                             child: Text(
                               value,
-                              textAlign: TextAlign.center,
+                              textAlign: TextAlign.start,
                             ),
                           ),
                         );
