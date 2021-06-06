@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:recipe_book/controller/menulist_controller.dart';
 import 'package:recipe_book/controller/optionmenu_controller.dart';
 import 'package:recipe_book/controller/slideshow_controller.dart';
-import '../models/list.dart';
 
 class Home extends StatelessWidget {
   @override

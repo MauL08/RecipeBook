@@ -3,7 +3,7 @@ import '../recipe/drink_page_recipe.dart';
 import 'package:recipe_book/models/recipe.dart';
 
 class DrinksPage extends StatelessWidget {
-  final List<RecipeData> data = RecipeDataContent;
+  final List<RecipeData> data = DrinkDataContent;
 
   @override
   Widget build(BuildContext context) {
@@ -18,40 +18,36 @@ class DrinksPage extends StatelessWidget {
       ),
       body: ListView(
         children: data.map((value) {
-          if (value.type == "Drink") {
-            return Container(
-              padding: EdgeInsets.fromLTRB(4.0, 4.0, 4.0, 4.0),
-              child: Card(
-                child: ListTile(
-                  leading: Container(
-                    height: 50,
-                    width: 50,
-                    child: Image.asset(
-                      value.image,
-                      fit: BoxFit.cover,
-                    ),
+          return Container(
+            padding: EdgeInsets.fromLTRB(4.0, 4.0, 4.0, 4.0),
+            child: Card(
+              child: ListTile(
+                leading: Container(
+                  height: 50,
+                  width: 50,
+                  child: Image.asset(
+                    value.image,
+                    fit: BoxFit.cover,
                   ),
-                  title: Text(value.name),
-                  subtitle: Text("Makanan Khas Indonesia"),
-                  trailing: Icon(Icons.arrow_forward),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return DrinkPageRecipe(
-                            data: value,
-                          );
-                        },
-                      ),
-                    );
-                  },
                 ),
+                title: Text(value.name),
+                subtitle: Text("Makanan Khas Indonesia"),
+                trailing: Icon(Icons.arrow_forward),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return DrinkPageRecipe(
+                          data: value,
+                        );
+                      },
+                    ),
+                  );
+                },
               ),
-            );
-          } else {
-            return Container();
-          }
+            ),
+          );
         }).toList(),
       ),
     );

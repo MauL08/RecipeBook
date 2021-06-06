@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_book/routes/recipe/home_list_recipe.dart';
-import '../../models/list.dart';
+import '../../models/recipe.dart';
 
 class GridListTwo extends StatelessWidget {
+  final List<RecipeData> data = HomeDataContent;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(bottom: 32.0),
-      child: GridView.builder(
-        itemCount: HomeDataList.length,
+      child: GridView(
         shrinkWrap: true,
         scrollDirection: Axis.vertical,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
         ),
-        itemBuilder: (context, index) {
-          HomeData menu = HomeDataList[index];
+        children: data.map((value) {
           return InkWell(
             onTap: () {
               Navigator.push(
@@ -23,7 +23,7 @@ class GridListTwo extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) {
                     return HomeListRecipePage(
-                      data: menu,
+                      data: value,
                     );
                   },
                 ),
@@ -34,32 +34,29 @@ class GridListTwo extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  margin: EdgeInsets.only(top: 25.0),
-                  padding: EdgeInsets.all(10.0),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(70.0),
                     child: Image.asset(
-                      menu.image,
-                      width: 400,
-                      height: 400,
-                      fit: BoxFit.cover,
+                      value.image,
+                      width: 450,
+                      height: 450,
                     ),
                   ),
                 ),
                 Container(
                   margin: EdgeInsets.only(top: 20.0),
                   child: Text(
-                    menu.name,
+                    value.name,
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                ),
+                )
               ],
             ),
           );
-        },
+        }).toList(),
       ),
     );
   }
