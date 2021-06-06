@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/recipe.dart';
+import 'package:recipe_book/controller/dialogs/fav_button_dialog.dart';
 import 'package:recipe_book/routes/recipe/responsive/horizontal_recipe.dart';
 import 'package:recipe_book/routes/recipe/responsive/vertical_recipe.dart';
 
@@ -21,7 +22,15 @@ class DrinkPageRecipe extends StatelessWidget {
         actions: [
           Container(
             margin: EdgeInsets.only(right: 10.0),
-            child: Icon(Icons.favorite),
+            child: WillPopScope(
+              child: IconButton(
+                icon: Icon(Icons.favorite),
+                onPressed: () {},
+              ),
+              onWillPop: () {
+                return FavButtonDialog.confirm(context);
+              },
+            ),
           )
         ],
       ),

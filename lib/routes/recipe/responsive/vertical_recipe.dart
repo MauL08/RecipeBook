@@ -11,7 +11,6 @@ class VerticalRecipePage extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
             child: Image.asset(data.image),
@@ -26,47 +25,48 @@ class VerticalRecipePage extends StatelessWidget {
               ),
             ),
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.circular(120.0),
-            child: Container(
-              margin: EdgeInsets.all(24.0),
-              padding: EdgeInsets.only(
-                top: 16.0,
-                bottom: 16.0,
+          Container(
+            margin: EdgeInsets.all(24.0),
+            padding: EdgeInsets.only(
+              top: 16.0,
+              bottom: 16.0,
+            ),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.orange,
+                width: 5.0,
               ),
-              decoration: BoxDecoration(
-                border: Border.all(
-                  color: Colors.orange,
-                  width: 5.0,
-                ),
-                color: Colors.white,
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.all(
+                Radius.circular(16.0),
               ),
-              child: Column(
-                children: data.ingredients.map(
-                  (value) {
-                    return Container(
-                      margin: EdgeInsets.only(
-                        left: 16.0,
-                        top: 10.0,
-                        bottom: 4.0,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            ">  ",
-                            textAlign: TextAlign.center,
-                          ),
-                          Text(
-                            value,
-                            textAlign: TextAlign.center,
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                ).toList(),
-              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: data.ingredients.map(
+                (value) {
+                  return Container(
+                    margin: EdgeInsets.only(
+                      left: 16.0,
+                      top: 10.0,
+                      bottom: 4.0,
+                    ),
+                    child: Row(
+                      children: [
+                        Text(
+                          ">  ",
+                          textAlign: TextAlign.start,
+                        ),
+                        Text(
+                          value,
+                          textAlign: TextAlign.start,
+                        ),
+                      ],
+                    ),
+                  );
+                },
+              ).toList(),
             ),
           ),
           Container(
@@ -79,45 +79,45 @@ class VerticalRecipePage extends StatelessWidget {
             ),
           ),
           Container(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(120.0),
-              child: Container(
-                margin: EdgeInsets.all(24.0),
-                padding: EdgeInsets.only(
-                  top: 16.0,
-                  bottom: 16.0,
-                ),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.orange,
-                    width: 5.0,
-                  ),
-                  color: Colors.white,
-                ),
-                child: Column(
-                  children: data.howTo.map(
-                    (value) {
-                      return Container(
-                        height: 15,
-                        margin: EdgeInsets.fromLTRB(
-                          10.0,
-                          10.0,
-                          10.0,
-                          4.0,
-                        ),
-                        child: FittedBox(
-                          child: Text(
-                            value,
-                            textAlign: TextAlign.start,
-                          ),
-                        ),
-                      );
-                    },
-                  ).toList(),
-                ),
+            margin: EdgeInsets.all(24.0),
+            padding: EdgeInsets.only(
+              top: 16.0,
+              bottom: 16.0,
+            ),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Colors.orange,
+                width: 5.0,
+              ),
+              color: Colors.white,
+              shape: BoxShape.rectangle,
+              borderRadius: BorderRadius.all(
+                Radius.circular(16.0),
               ),
             ),
-          )
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: data.howTo.map(
+                (value) {
+                  return Container(
+                    height: 15,
+                    margin: EdgeInsets.fromLTRB(
+                      10.0,
+                      10.0,
+                      10.0,
+                      4.0,
+                    ),
+                    child: FittedBox(
+                      child: Text(
+                        value,
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                  );
+                },
+              ).toList(),
+            ),
+          ),
         ],
       ),
     );

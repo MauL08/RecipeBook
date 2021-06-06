@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_book/controller/dialogs/trash_button_dialog.dart';
 import 'package:recipe_book/models/recipe.dart';
 import 'package:recipe_book/routes/recipe/fav_page_recipe.dart';
 
@@ -32,7 +33,15 @@ class FavoritePage extends StatelessWidget {
                 ),
                 title: Text(value.name),
                 subtitle: Text("Makanan Khas Indonesia"),
-                trailing: Icon(Icons.delete),
+                trailing: WillPopScope(
+                  child: IconButton(
+                    icon: Icon(Icons.delete),
+                    onPressed: () {},
+                  ),
+                  onWillPop: () {
+                    return TrashButtonDialog.confirm(context);
+                  },
+                ),
                 onTap: () {
                   Navigator.push(
                     context,

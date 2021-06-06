@@ -13,6 +13,9 @@ class MenuController extends StatelessWidget {
           if (constraint.maxWidth < 1000) {
             return Column(
               children: [
+                SizedBox(
+                  height: 50.0,
+                ),
                 Container(
                   padding: EdgeInsets.only(bottom: 20.0),
                   child: ClipRRect(
@@ -88,74 +91,81 @@ class MenuController extends StatelessWidget {
               ],
             );
           } else {
-            return Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            return Column(
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: RaisedButton(
-                    padding: EdgeInsets.fromLTRB(60.0, 24.0, 60.0, 24.0),
-                    color: Colors.orange,
-                    child: Text(
-                      "Makanan",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                SizedBox(
+                  height: 100.0,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: RaisedButton(
+                        padding: EdgeInsets.fromLTRB(60.0, 24.0, 60.0, 24.0),
+                        color: Colors.orange,
+                        child: Text(
+                          "Makanan",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FoodPage();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return FoodPage();
-                          },
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: RaisedButton(
+                        padding: EdgeInsets.fromLTRB(60.0, 24.0, 60.0, 24.0),
+                        color: Colors.orange,
+                        child: Text(
+                          "Minuman",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
                         ),
-                      );
-                    },
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: RaisedButton(
-                    padding: EdgeInsets.fromLTRB(60.0, 24.0, 60.0, 24.0),
-                    color: Colors.orange,
-                    child: Text(
-                      "Minuman",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return DrinksPage();
+                              },
+                            ),
+                          );
+                        },
                       ),
                     ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return DrinksPage();
-                          },
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: RaisedButton(
-                    padding: EdgeInsets.fromLTRB(60.0, 22.0, 60.0, 22.0),
-                    color: Colors.red,
-                    child: Icon(Icons.favorite),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) {
-                            return FavoritePage();
-                          },
-                        ),
-                      );
-                    },
-                  ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: RaisedButton(
+                        padding: EdgeInsets.fromLTRB(60.0, 22.0, 60.0, 22.0),
+                        color: Colors.red,
+                        child: Icon(Icons.favorite),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FavoritePage();
+                              },
+                            ),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ],
             );
