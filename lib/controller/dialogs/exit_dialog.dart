@@ -41,11 +41,11 @@ class ExitDialog extends StatelessWidget {
                       "Tidak",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 12.0,
+                        fontSize: 15.0,
                       ),
                     ),
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pop(context, false);
                     },
                   ),
                   RaisedButton(
@@ -55,11 +55,11 @@ class ExitDialog extends StatelessWidget {
                       "Ya",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 12.0,
+                        fontSize: 15.0,
                       ),
                     ),
                     onPressed: () {
-                      return Navigator.of(context).pop(true);
+                      Navigator.pop(context, true);
                     },
                   )
                 ],
@@ -71,8 +71,8 @@ class ExitDialog extends StatelessWidget {
     );
   }
 
-  static exit(context) {
-    showDialog(
+  static exit(context) async {
+    await showDialog(
       context: context,
       builder: (context) {
         return ExitDialog();

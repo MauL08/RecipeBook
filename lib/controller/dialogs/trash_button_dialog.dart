@@ -40,7 +40,7 @@ class TrashButtonDialog extends StatelessWidget {
                     "Tidak",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
+                      fontSize: 15.0,
                     ),
                   ),
                   onPressed: () {
@@ -54,7 +54,7 @@ class TrashButtonDialog extends StatelessWidget {
                     "Ya",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 12.0,
+                      fontSize: 15.0,
                     ),
                   ),
                   onPressed: () {
