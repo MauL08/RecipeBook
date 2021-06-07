@@ -31,7 +31,7 @@ class DrinksPage extends StatelessWidget {
                   ),
                 ),
                 title: Text(value.name),
-                subtitle: Text("Makanan Khas Indonesia"),
+                subtitle: Text("Minuman Khas Indonesia"),
                 trailing: Icon(Icons.arrow_forward),
                 onTap: () {
                   Navigator.push(

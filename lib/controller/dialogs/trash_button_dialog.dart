@@ -5,19 +5,29 @@ class TrashButtonDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(10.0),
-        ),
+        borderRadius: BorderRadius.circular(10.0),
       ),
       elevation: 0,
       backgroundColor: Colors.transparent,
       child: Container(
+        height: 200,
+        decoration: BoxDecoration(
+          color: Colors.orange,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(24.0),
+          border: Border.all(color: Colors.black, width: 5.0),
+        ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("Hapus dari Favorit?"),
+            SizedBox(
+              height: 36.0,
+            ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                RaisedButton(
+                FlatButton(
                   child: Text("Tidak"),
                   onPressed: () {
                     Navigator.pop(context);
@@ -25,7 +35,9 @@ class TrashButtonDialog extends StatelessWidget {
                 ),
                 RaisedButton(
                   child: Text("Ya"),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 )
               ],
             )
@@ -35,24 +47,12 @@ class TrashButtonDialog extends StatelessWidget {
     );
   }
 
-  static confirm(context) {
-    showDialog(
+  static confirm(context) async {
+    await showDialog(
       context: context,
       builder: (context) {
         return TrashButtonDialog();
       },
     );
-  }
-}
-
-class name extends StatefulWidget {
-  @override
-  _nameState createState() => _nameState();
-}
-
-class _nameState extends State<name> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }

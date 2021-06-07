@@ -12,26 +12,33 @@ class ExitDialog extends StatelessWidget {
       elevation: 0,
       backgroundColor: Colors.transparent,
       child: Container(
-        child: Column(
-          children: [
-            Text("Keluar Aplikasi?"),
-            Row(
-              children: [
-                RaisedButton(
-                  child: Text("Tidak"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                RaisedButton(
-                  child: Text("Ya"),
-                  onPressed: () {
-                    return Navigator.of(context).pop(true);
-                  },
-                )
-              ],
-            )
-          ],
+        decoration: BoxDecoration(
+          color: Colors.red,
+          shape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        child: Center(
+          child: Column(
+            children: [
+              Text("Keluar Aplikasi?"),
+              Row(
+                children: [
+                  FlatButton(
+                    child: Text("Tidak"),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
+                  RaisedButton(
+                    child: Text("Ya"),
+                    onPressed: () {
+                      return Navigator.of(context).pop(true);
+                    },
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
     );

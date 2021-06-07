@@ -33,12 +33,9 @@ class FavoritePage extends StatelessWidget {
                 ),
                 title: Text(value.name),
                 subtitle: Text("Makanan Khas Indonesia"),
-                trailing: WillPopScope(
-                  child: IconButton(
-                    icon: Icon(Icons.delete),
-                    onPressed: () {},
-                  ),
-                  onWillPop: () {
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
                     return TrashButtonDialog.confirm(context);
                   },
                 ),

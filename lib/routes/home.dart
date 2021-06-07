@@ -26,9 +26,7 @@ class Home extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.orange,
                   shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(12.0),
-                  ),
+                  borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Column(
                   children: [

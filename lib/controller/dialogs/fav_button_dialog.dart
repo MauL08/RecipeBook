@@ -1,39 +1,32 @@
 import 'package:flutter/material.dart';
 
-class FavButtonDialog extends StatelessWidget {
+class FavButton extends StatefulWidget {
+  @override
+  _FavButtonState createState() => _FavButtonState();
+}
+
+class _FavButtonState extends State<FavButton> {
+  bool status = false;
   @override
   Widget build(BuildContext context) {
-    return Dialog(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(10.0),
-        ),
+    return IconButton(
+      icon: Icon(
+        Icons.favorite,
+        color: status ? Colors.red : Colors.black,
       ),
-      elevation: 0,
-      backgroundColor: Colors.transparent,
-      child: Container(
-        child: Column(
-          children: [
-            Text("Tambahkan ke Favorit?"),
-            Row(
-              children: [
-                RaisedButton(
-                  child: Text("Tidak"),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-                RaisedButton(
-                  child: Text("Ya"),
-                  onPressed: () {},
-                )
-              ],
-            )
-          ],
-        ),
-      ),
+      onPressed: () {
+        setState(() {
+          status = true;
+        });
+        return FavButtonDialog.confirm(context);
+      },
     );
   }
+}
+
+class FavButtonDialog extends StatefulWidget {
+  @override
+  _FavButtonDialogState createState() => _FavButtonDialogState();
 
   static confirm(context) {
     showDialog(
@@ -45,14 +38,32 @@ class FavButtonDialog extends StatelessWidget {
   }
 }
 
-class name extends StatefulWidget {
-  @override
-  _nameState createState() => _nameState();
-}
-
-class _nameState extends State<name> {
+class _FavButtonDialogState extends State<FavButtonDialog> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(10.0),
+        ),
+      ),
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      child: Center(
+        child: Container(
+          child: Column(
+            children: [
+              Text("Resep ditambahkan ke Favorit"),
+              RaisedButton(
+                child: Text("OK"),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              )
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }

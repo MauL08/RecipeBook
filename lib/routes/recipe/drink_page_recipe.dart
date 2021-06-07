@@ -22,14 +22,9 @@ class DrinkPageRecipe extends StatelessWidget {
         actions: [
           Container(
             margin: EdgeInsets.only(right: 10.0),
-            child: WillPopScope(
-              child: IconButton(
-                icon: Icon(Icons.favorite),
-                onPressed: () {},
-              ),
-              onWillPop: () {
-                return FavButtonDialog.confirm(context);
-              },
+            child: IconButton(
+              icon: Icon(Icons.favorite),
+              onPressed: () {},
             ),
           )
         ],
