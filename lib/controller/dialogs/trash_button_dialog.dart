@@ -10,6 +10,7 @@ class TrashButtonDialog extends StatelessWidget {
       elevation: 0,
       backgroundColor: Colors.transparent,
       child: Container(
+        width: 400,
         height: 200,
         decoration: BoxDecoration(
           color: Colors.orange,
@@ -20,21 +21,42 @@ class TrashButtonDialog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Hapus dari Favorit?"),
+            Text(
+              "Hapus dari Favorit?",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 18.0,
+              ),
+            ),
             SizedBox(
-              height: 36.0,
+              height: 30.0,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FlatButton(
-                  child: Text("Tidak"),
+                  hoverColor: Colors.red,
+                  child: Text(
+                    "Tidak",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.0,
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
                 RaisedButton(
-                  child: Text("Ya"),
+                  color: Colors.orange[800],
+                  hoverColor: Colors.red,
+                  child: Text(
+                    "Ya",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12.0,
+                    ),
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },

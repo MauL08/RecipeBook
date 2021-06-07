@@ -22,10 +22,7 @@ class FavoritePageRecipe extends StatelessWidget {
         actions: [
           Container(
             margin: EdgeInsets.only(right: 10.0),
-            child: IconButton(
-              icon: Icon(Icons.favorite),
-              onPressed: () {},
-            ),
+            child: FavButton(),
           )
         ],
       ),

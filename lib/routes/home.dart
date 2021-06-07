@@ -33,7 +33,7 @@ class Home extends StatelessWidget {
                     Text(
                       "Selamat Datang di",
                       style: TextStyle(
-                        fontSize: 24.0,
+                        fontSize: 20.0,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
                       ),

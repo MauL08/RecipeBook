@@ -7,6 +7,7 @@ class FavButton extends StatefulWidget {
 
 class _FavButtonState extends State<FavButton> {
   bool status = false;
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -51,11 +52,35 @@ class _FavButtonDialogState extends State<FavButtonDialog> {
       backgroundColor: Colors.transparent,
       child: Center(
         child: Container(
+          width: 400,
+          height: 200,
+          decoration: BoxDecoration(
+            color: Colors.orange,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(24.0),
+            border: Border.all(color: Colors.black, width: 5.0),
+          ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Resep ditambahkan ke Favorit"),
+              Text(
+                "Resep ditambahkan ke Favorit",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 30.0),
               RaisedButton(
-                child: Text("OK"),
+                color: Colors.orange[800],
+                hoverColor: Colors.red,
+                child: Text(
+                  "OK",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12.0,
+                  ),
+                ),
                 onPressed: () {
                   Navigator.pop(context);
                 },

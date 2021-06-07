@@ -12,25 +12,52 @@ class ExitDialog extends StatelessWidget {
       elevation: 0,
       backgroundColor: Colors.transparent,
       child: Container(
+        width: 400,
+        height: 200,
         decoration: BoxDecoration(
-          color: Colors.red,
+          color: Colors.orange,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(12.0),
+          borderRadius: BorderRadius.circular(24.0),
+          border: Border.all(color: Colors.black, width: 5.0),
         ),
         child: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text("Keluar Aplikasi?"),
+              Text(
+                "Keluar Aplikasi?",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+              SizedBox(height: 30.0),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   FlatButton(
-                    child: Text("Tidak"),
+                    hoverColor: Colors.red,
+                    child: Text(
+                      "Tidak",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0,
+                      ),
+                    ),
                     onPressed: () {
                       Navigator.pop(context);
                     },
                   ),
                   RaisedButton(
-                    child: Text("Ya"),
+                    color: Colors.orange[800],
+                    hoverColor: Colors.red,
+                    child: Text(
+                      "Ya",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 12.0,
+                      ),
+                    ),
                     onPressed: () {
                       return Navigator.of(context).pop(true);
                     },
