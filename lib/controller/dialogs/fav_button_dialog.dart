@@ -25,21 +25,7 @@ class _FavButtonState extends State<FavButton> {
   }
 }
 
-class FavButtonDialog extends StatefulWidget {
-  @override
-  _FavButtonDialogState createState() => _FavButtonDialogState();
-
-  static confirm(context) {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return FavButtonDialog();
-      },
-    );
-  }
-}
-
-class _FavButtonDialogState extends State<FavButtonDialog> {
+class FavButtonDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -89,6 +75,15 @@ class _FavButtonDialogState extends State<FavButtonDialog> {
           ),
         ),
       ),
+    );
+  }
+
+  static confirm(context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return FavButtonDialog();
+      },
     );
   }
 }

@@ -2,13 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:recipe_book/controller/optionmenu_controller.dart';
 import 'package:recipe_book/controller/slideshow_controller.dart';
 
-class Home extends StatefulWidget {
-  @override
-  _HomeState createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
-  Future<bool> _exitApp() async {
+class Home extends StatelessWidget {
+  Future<bool> _exitApp(BuildContext context) async {
     return await showDialog(
       context: context,
       builder: (context) {
@@ -127,7 +122,9 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
-      onWillPop: _exitApp,
+      onWillPop: () {
+        return _exitApp(context);
+      },
     );
   }
 }
