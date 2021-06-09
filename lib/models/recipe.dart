@@ -1,11 +1,11 @@
 class RecipeData {
-  String type;
-  String image;
-  String name;
-  List ingredients;
-  List howTo;
+  final String type;
+  final String image;
+  final String name;
+  final List ingredients;
+  final List howTo;
 
-  RecipeData({
+  const RecipeData({
     required this.type,
     required this.image,
     required this.name,
@@ -14,7 +14,7 @@ class RecipeData {
   });
 }
 
-var FoodDataContent = [
+const FoodDataContent = [
   // FOOD RECIPE
   RecipeData(
     type: "Food",
@@ -318,7 +318,7 @@ var FoodDataContent = [
   ),
 ];
 
-var DrinkDataContent = [
+const DrinkDataContent = [
   // DRINK RECIPE
   RecipeData(
     type: 'Drink',
