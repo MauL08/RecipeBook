@@ -1,5 +1,5 @@
 # Flutter Apps (1)
-## Food & Drink Recipe App with Flutter
+## Food & Drink Recipe Apps
 
 Preview :
 
